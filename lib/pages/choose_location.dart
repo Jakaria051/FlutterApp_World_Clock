@@ -6,10 +6,25 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
+  int count = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       body: SafeArea(child: Text("Choose Location"),),
+       backgroundColor: Colors.redAccent,
+       appBar: AppBar(
+         backgroundColor: Colors.red[900],
+         title: Text("Choose Location"),
+         centerTitle: true,
+         elevation: 0,
+         ),
+         body: RaisedButton(
+           onPressed: (){
+             setState(() {
+             count += 1;               
+            });
+           },
+           child: Text("Pressed $count times"),
+         ),
     );
   }
 }
